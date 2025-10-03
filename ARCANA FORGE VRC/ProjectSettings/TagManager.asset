@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Floor
+  - Coin
+  - Spikes
+  - Barril
   layers:
   - Default
   - TransparentFX
@@ -12,7 +15,7 @@ TagManager:
   - Floor
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 
@@ -41,6 +44,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player arcana forge
+    uniqueID: 925698655
+    locked: 0
+  - name: bola de ataque
+    uniqueID: 3712866841
     locked: 0
   m_RenderingLayers:
   - Default

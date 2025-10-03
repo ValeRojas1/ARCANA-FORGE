@@ -1,0 +1,1082 @@
+fileFormatVersion: 2
+guid: f973b769d4708ba41a73417af90b3ce4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -643264357680912470
+    second: WizardSHEETT_0
+  - first:
+      213: 5538012372692326105
+    second: WizardSHEETT_1
+  - first:
+      213: 4200975884005758512
+    second: WizardSHEETT_2
+  - first:
+      213: 3270779940485684179
+    second: WizardSHEETT_3
+  - first:
+      213: 2130646309033371751
+    second: WizardSHEETT_4
+  - first:
+      213: -7187333047114934976
+    second: WizardSHEETT_5
+  - first:
+      213: 1690380884628674741
+    second: WizardSHEETT_6
+  - first:
+      213: 5192016129647797272
+    second: WizardSHEETT_7
+  - first:
+      213: 1247874890157327199
+    second: WizardSHEETT_8
+  - first:
+      213: 6221689926878257381
+    second: WizardSHEETT_9
+  - first:
+      213: -3174060653876798674
+    second: WizardSHEETT_10
+  - first:
+      213: 2733935808307023753
+    second: WizardSHEETT_11
+  - first:
+      213: 6417049919083068596
+    second: WizardSHEETT_12
+  - first:
+      213: 5326799718013048211
+    second: WizardSHEETT_13
+  - first:
+      213: -5982249884373906718
+    second: WizardSHEETT_14
+  - first:
+      213: -8260383396758021587
+    second: WizardSHEETT_15
+  - first:
+      213: -700566937352429303
+    second: WizardSHEETT_16
+  - first:
+      213: 7463738594627766425
+    second: WizardSHEETT_17
+  - first:
+      213: 2297335191805152629
+    second: WizardSHEETT_18
+  - first:
+      213: -1582306506828940861
+    second: WizardSHEETT_19
+  - first:
+      213: 7859943138735824451
+    second: WizardSHEETT_20
+  - first:
+      213: -6367298754712884734
+    second: WizardSHEETT_21
+  - first:
+      213: 2243916187695926983
+    second: WizardSHEETT_22
+  - first:
+      213: -8956213184454548429
+    second: WizardSHEETT_23
+  - first:
+      213: -3530347242740959299
+    second: WizardSHEETT_24
+  - first:
+      213: -7089805161393299754
+    second: WizardSHEETT_25
+  - first:
+      213: -7502892157288484389
+    second: WizardSHEETT_26
+  - first:
+      213: 1448945539085582592
+    second: WizardSHEETT_27
+  - first:
+      213: -3480089019398319915
+    second: WizardSHEETT_28
+  - first:
+      213: -8744726377698378861
+    second: WizardSHEETT_29
+  - first:
+      213: -2098939315976513815
+    second: WizardSHEETT_30
+  - first:
+      213: 2716946484498592403
+    second: WizardSHEETT_31
+  - first:
+      213: 5831683520808758918
+    second: WizardSHEETT_32
+  - first:
+      213: 2476856174166269090
+    second: WizardSHEETT_33
+  - first:
+      213: 5012648571982271067
+    second: WizardSHEETT_34
+  - first:
+      213: -7337073823790958344
+    second: WizardSHEETT_35
+  - first:
+      213: 3648005186198195296
+    second: WizardSHEETT_36
+  - first:
+      213: -4893764568763205730
+    second: WizardSHEETT_37
+  - first:
+      213: -8047629844947900642
+    second: WizardSHEETT_38
+  - first:
+      213: -3176524242121523101
+    second: WizardSHEETT_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: WizardSHEETT_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 488
+        width: 28
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa762cf897aa217f0800000000000000
+      internalID: -643264357680912470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_1
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 488
+        width: 28
+        height: 59
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d65b0c49e8fadc40800000000000000
+      internalID: 5538012372692326105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_2
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 488
+        width: 27
+        height: 57
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 036552c0f4ddc4a30800000000000000
+      internalID: 4200975884005758512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_3
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 488
+        width: 32
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3db5f1bc605246d20800000000000000
+      internalID: 3270779940485684179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_4
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 488
+        width: 38
+        height: 57
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7686ee78783919d10800000000000000
+      internalID: 2130646309033371751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_5
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 487
+        width: 42
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 045d94c7ca6714c90800000000000000
+      internalID: -7187333047114934976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_6
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 392
+        width: 38
+        height: 59
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b817636570757710800000000000000
+      internalID: 1690380884628674741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_7
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 392
+        width: 39
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81461c3592fbd0840800000000000000
+      internalID: 5192016129647797272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_8
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 392
+        width: 37
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5305ffd997515110800000000000000
+      internalID: 1247874890157327199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_9
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 393
+        width: 37
+        height: 59
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e0643a4602e75650800000000000000
+      internalID: 6221689926878257381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_10
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 392
+        width: 41
+        height: 59
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2b1126f6a873f3d0800000000000000
+      internalID: -3174060653876798674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_11
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 393
+        width: 33
+        height: 59
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98f4cd4f124e0f520800000000000000
+      internalID: 2733935808307023753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_12
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 298
+        width: 33
+        height: 59
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bc35e407e0fd0950800000000000000
+      internalID: 6417049919083068596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_13
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 297
+        width: 29
+        height: 59
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39591d5fe189ce940800000000000000
+      internalID: 5326799718013048211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_14
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 297
+        width: 33
+        height: 61
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ea854cec67cafca0800000000000000
+      internalID: -5982249884373906718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_15
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 297
+        width: 31
+        height: 61
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2a14b7e0193d5d80800000000000000
+      internalID: -8260383396758021587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_16
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 297
+        width: 31
+        height: 61
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 901a9bd05161746f0800000000000000
+      internalID: -700566937352429303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_17
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 297
+        width: 37
+        height: 61
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 998492d05b6849760800000000000000
+      internalID: 7463738594627766425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_18
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 201
+        width: 37
+        height: 62
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57dcc856f26c1ef10800000000000000
+      internalID: 2297335191805152629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_19
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 202
+        width: 44
+        height: 59
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c9fbae8d948a0ae0800000000000000
+      internalID: -1582306506828940861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_20
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 202
+        width: 40
+        height: 59
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e1e1314a0241d60800000000000000
+      internalID: 7859943138735824451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_21
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 204
+        width: 41
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5131676, y: 0.6933735}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20a2d8a948fc2a7a0800000000000000
+      internalID: -6367298754712884734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_22
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 204
+        width: 34
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5028094, y: 0.6780626}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ce4d5942edf32f10800000000000000
+      internalID: 2243916187695926983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_23
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 203
+        width: 28
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 334aaef8f8325b380800000000000000
+      internalID: -8956213184454548429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_24
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 108
+        width: 33
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db735a623efa10fc0800000000000000
+      internalID: -3530347242740959299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_25
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 108
+        width: 36
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dedb64e4c3fb9d90800000000000000
+      internalID: -7089805161393299754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_26
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 108
+        width: 36
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd171c0c55f50e790800000000000000
+      internalID: -7502892157288484389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_27
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 108
+        width: 36
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 001451c7a40bb1410800000000000000
+      internalID: 1448945539085582592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_28
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 108
+        width: 39
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d09604a97d34bfc0800000000000000
+      internalID: -3480089019398319915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_29
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 108
+        width: 41
+        height: 59
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39bbc47e0bd74a680800000000000000
+      internalID: -8744726377698378861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_30
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 13
+        width: 38
+        height: 59
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e65e1210d11fd2e0800000000000000
+      internalID: -2098939315976513815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_31
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 13
+        width: 38
+        height: 59
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 392f842ce6884b520800000000000000
+      internalID: 2716946484498592403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_32
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 36
+        width: 17
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5335828, y: 0.479011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68e2e4cb34d4ee050800000000000000
+      internalID: 5831683520808758918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_33
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 30
+        width: 28
+        height: 25
+      alignment: 9
+      pivot: {x: 0.43240356, y: 0.50167465}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2acd9e4419f8f5220800000000000000
+      internalID: 2476856174166269090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_34
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 33
+        width: 30
+        height: 22
+      alignment: 9
+      pivot: {x: 0.43714395, y: 0.44613507}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b525fdc6151809540800000000000000
+      internalID: 5012648571982271067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WizardSHEETT_37
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 31
+        width: 26
+        height: 22
+      alignment: 9
+      pivot: {x: 0.4611793, y: 0.5373499}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e97f9709d0bd51cb0800000000000000
+      internalID: -4893764568763205730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9bd83780b42b969429b3d8c73ce7157e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      WizardSHEETT_0: -643264357680912470
+      WizardSHEETT_1: 5538012372692326105
+      WizardSHEETT_10: -3174060653876798674
+      WizardSHEETT_11: 2733935808307023753
+      WizardSHEETT_12: 6417049919083068596
+      WizardSHEETT_13: 5326799718013048211
+      WizardSHEETT_14: -5982249884373906718
+      WizardSHEETT_15: -8260383396758021587
+      WizardSHEETT_16: -700566937352429303
+      WizardSHEETT_17: 7463738594627766425
+      WizardSHEETT_18: 2297335191805152629
+      WizardSHEETT_19: -1582306506828940861
+      WizardSHEETT_2: 4200975884005758512
+      WizardSHEETT_20: 7859943138735824451
+      WizardSHEETT_21: -6367298754712884734
+      WizardSHEETT_22: 2243916187695926983
+      WizardSHEETT_23: -8956213184454548429
+      WizardSHEETT_24: -3530347242740959299
+      WizardSHEETT_25: -7089805161393299754
+      WizardSHEETT_26: -7502892157288484389
+      WizardSHEETT_27: 1448945539085582592
+      WizardSHEETT_28: -3480089019398319915
+      WizardSHEETT_29: -8744726377698378861
+      WizardSHEETT_3: 3270779940485684179
+      WizardSHEETT_30: -2098939315976513815
+      WizardSHEETT_31: 2716946484498592403
+      WizardSHEETT_32: 5831683520808758918
+      WizardSHEETT_33: 2476856174166269090
+      WizardSHEETT_34: 5012648571982271067
+      WizardSHEETT_35: -7337073823790958344
+      WizardSHEETT_36: 3648005186198195296
+      WizardSHEETT_37: -4893764568763205730
+      WizardSHEETT_38: -8047629844947900642
+      WizardSHEETT_39: -3176524242121523101
+      WizardSHEETT_4: 2130646309033371751
+      WizardSHEETT_5: -7187333047114934976
+      WizardSHEETT_6: 1690380884628674741
+      WizardSHEETT_7: 5192016129647797272
+      WizardSHEETT_8: 1247874890157327199
+      WizardSHEETT_9: 6221689926878257381
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
