@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4751957941850047711}
   m_Layer: 10
-  m_Name: GroundDetection
+  m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 4282704345046680668}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.205, y: -0.208, z: 0}
+  m_LocalPosition: {x: -0.012, y: -0.178, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -105,8 +105,8 @@ GameObject:
   - component: {fileID: 6744389940775568371}
   - component: {fileID: 7632389542230003473}
   - component: {fileID: 2779747679787667507}
-  - component: {fileID: 5666869519701947151}
   - component: {fileID: 5342499629965307034}
+  - component: {fileID: 7903865523426903383}
   m_Layer: 10
   m_Name: FroggoFire
   m_TagString: Untagged
@@ -153,6 +153,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -174,6 +176,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
@@ -237,34 +240,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5666869519701947151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8370058674587474950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bc285e93f818f240a95314ac274dbd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpBoolName: isJumping
-  attackTriggerName: Attack
-  patrolSpeed: 2
-  jumpHeight: 5
-  groundDetection: {fileID: 4751957941850047711}
-  wallCheckDistance: 0.5
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 0
-  detectionRange: 8
-  attackRange: 7
-  attackCooldown: 3
-  isRanged: 1
-  projectilePrefab: {fileID: 0}
-  firePoint: {fileID: 4730693205954119064}
-  tongueHitbox: {fileID: 0}
 --- !u!61 &5342499629965307034
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -311,6 +286,34 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.45, y: 0.35}
   m_EdgeRadius: 0
+--- !u!114 &7903865523426903383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8370058674587474950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc285e93f818f240a95314ac274dbd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FrogEnemy
+  patrolSpeed: 1.2
+  jumpForce: 8
+  patrol: 1
+  groundCheck: {fileID: 4751957941850047711}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  groundCheckRadius: 0.12
+  detectionRange: 6
+  minAttackDistance: 0.8
+  maxAttackDistance: 3.5
+  attackCooldown: 1.8
+  tongueRoot: {fileID: 0}
+  hurtBox: {fileID: 0}
+  jumpSfx: {fileID: 0}
+  tongueSfx: {fileID: 0}
 --- !u!1 &9067148894285387808
 GameObject:
   m_ObjectHideFlags: 0
