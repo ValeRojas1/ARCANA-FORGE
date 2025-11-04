@@ -193,3 +193,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   lifeTime: 3
+  dano: 10
+  velocidad: 8

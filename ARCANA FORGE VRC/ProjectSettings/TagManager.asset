@@ -52,5 +52,8 @@ TagManager:
   - name: bola de ataque
     uniqueID: 3712866841
     locked: 0
+  - name: UI_WorldSpace
+    uniqueID: 2746470215
+    locked: 0
   m_RenderingLayers:
   - Default

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5729346413895170305}
   - component: {fileID: 1485867151636149066}
   - component: {fileID: 1601306726690943244}
+  - component: {fileID: -3046052479082649344}
   m_Layer: 0
   m_Name: FroggoFire_proyectil
   m_TagString: Untagged
@@ -56,6 +57,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -77,6 +80,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
@@ -184,10 +188,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7186562175264049506}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7745fe92143ac041ac29acb4c6d966e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3.23
   lifeTime: 2.52
+--- !u!114 &-3046052479082649344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7186562175264049506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7987f149c78c54e4487355afa84a3dd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ProyectilEnemigo
+  damage: 15
+  speed: 3
+  timeToLive: 3

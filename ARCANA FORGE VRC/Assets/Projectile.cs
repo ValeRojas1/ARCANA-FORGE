@@ -6,7 +6,8 @@ public class Projectile : MonoBehaviour
     public float lifeTime = 4f;
     private int direction = 1;
     private Rigidbody2D rb;
-
+    public int dano = 10;
+    public float velocidad = 8f;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -53,8 +54,27 @@ public class Projectile : MonoBehaviour
 
         // Aquí podrías agregar lógica de daño a enemigos:
         // if (other.CompareTag("Enemy")) { /* aplicar daño */ }
+        // Intentamos encontrar un script de salud en lo que chocamos
+        SaludEnemigo saludEnemigo = other.GetComponent<SaludEnemigo>();
+
+        if (saludEnemigo != null)
+        {
+            // ¡Le encontramos! Hacerle daño
+            saludEnemigo.TakeDamage(dano);
+            
+            // Destruir el proyectil al impactar
+            Destroy(gameObject);
+        }
+
+        // Opcional: Destruir si choca con el escenario (ej. Layer "Ground")
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            Destroy(gameObject);
+        }
 
         Destroy(gameObject);
     }
+
+    
 }
 
