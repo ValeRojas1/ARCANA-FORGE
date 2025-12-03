@@ -206,7 +206,9 @@ MonoBehaviour:
     m_Bits: 8
   projectilePrefab: {fileID: 2380271200379884516, guid: 0da3e65bc0723dd4594437dbe01e7d57, type: 3}
   firePoint: {fileID: 184451756164529340}
-  textCoins: {fileID: 0}
+  sonidoDisparoNormal: {fileID: 8300000, guid: 4bed7dfe1dfabbc4d804b3bf985b45cd, type: 3}
+  sonidoDisparoPotenciado: {fileID: 8300000, guid: b21fb3aaebdce7a489dd5b49ed0a3990, type: 3}
+  crouchHeightMultiplier: 0.4
   audioSource: {fileID: 7102924065350953071}
   coinClip: {fileID: 8300000, guid: ffadc9b2b2b65564fb644b1845cc24e6, type: 3}
   barrilClip: {fileID: 8300000, guid: 3d75fff732fffc849b0c3fdcca53b657, type: 3}
@@ -222,8 +224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 201790056b365ae46a7af6e53a92982b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SaludJugador
-  saludActual: 100
   saludMaxima: 100
+  saludActual: 100
   barraDeSaludUI: {fileID: 0}
 --- !u!82 &7102924065350953071
 AudioSource:
@@ -237,7 +239,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.86
   m_Pitch: 0.65
   Loop: 0

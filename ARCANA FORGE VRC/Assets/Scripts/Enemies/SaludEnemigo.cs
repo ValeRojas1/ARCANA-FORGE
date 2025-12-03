@@ -7,15 +7,15 @@ public class SaludEnemigo : MonoBehaviour
     public int saludActual = 50;
     public int saludMaxima = 50;
 
-    // --- ¡MODIFICACIÓN CLAVE! ---
     [Header("UI de Salud (Auto-Instanciar)")]
     public GameObject barraDeSaludPrefab; // Arrastra el PREFAB 'BarraSalud_Contenedor' aquí
 
+    [Header("Efectos de Muerte")]
+    [SerializeField] private GameObject auraMagicaPrefab; // Arrastra el prefab del aura mágica aquí
+    [SerializeField] private float offsetAuraY = 0f; // Ajuste de posición vertical del aura si es necesario
+
     // El script necesita saber DÓNDE crear la barra
     private Canvas canvasWorldSpace; 
-    
-    // --- Fin de Modificación ---
-
     private UI_BarraDeSalud barraDeSaludUI_Instancia; // Referencia a la barra CREADA
     private FrogAI frogScript; 
 
@@ -24,7 +24,6 @@ public class SaludEnemigo : MonoBehaviour
         frogScript = GetComponent<FrogAI>();
     }
 
-    // --- ¡NUEVA FUNCIÓN! ---
     void Start()
     {
         // 1. Encontrar el canvas en la escena por su nombre
@@ -54,7 +53,6 @@ public class SaludEnemigo : MonoBehaviour
             }
         }
     }
-    // --- Fin de Nueva Función ---
 
     public void TakeDamage(int cantidad)
     {
@@ -74,24 +72,62 @@ public class SaludEnemigo : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("El enemigo ha muerto");
+        Debug.Log($"{gameObject.name} ha muerto - Reproduciendo efectos de muerte");
         
-        if(frogScript != null) frogScript.enabled = false;
+        // --- EFECTO VISUAL: Instanciar el aura mágica ---
+        GameObject auraInstanciada = null;
+        float duracionAnimacion = 2f; // Valor por defecto
         
-        Collider2D[] colliders = GetComponents<Collider2D>();
-        foreach(var col in colliders) col.enabled = false;
-        
-        GetComponent<Rigidbody2D>().simulated = false;
+        if (auraMagicaPrefab != null)
+        {
+            Vector3 posicionAura = transform.position + new Vector3(0, offsetAuraY, 0);
+            auraInstanciada = Instantiate(auraMagicaPrefab, posicionAura, Quaternion.identity);
+            
+            // Obtener la duración real de la animación del aura
+            Animator auraAnimator = auraInstanciada.GetComponent<Animator>();
+            if (auraAnimator != null)
+            {
+                AnimatorClipInfo[] clipInfo = auraAnimator.GetCurrentAnimatorClipInfo(0);
+                if (clipInfo.Length > 0)
+                {
+                    duracionAnimacion = clipInfo[0].clip.length;
+                    Debug.Log("Duración de la animación del aura: " + duracionAnimacion + " segundos");
+                }
+            }
+            
+            Debug.Log("Aura mágica instanciada en: " + posicionAura);
+        }
+        else
+        {
+            Debug.LogWarning("¡Aura Mágica Prefab NO está asignado en " + gameObject.name + "!");
+        }
 
-        // --- ¡NUEVA LÍNEA IMPORTANTE! ---
-        // También destruimos la barra de vida que creamos.
+        // --- NOTA: El sonido se reproduce desde el AudioSource del prefab del aura ---
+        // No necesitamos código adicional aquí porque el aura tiene Play On Awake activado
+        
+        // --- Desactivar comportamiento del enemigo ---
+        if (frogScript != null) 
+            frogScript.enabled = false;
+        
+        // Desactivar colisiones
+        Collider2D[] colliders = GetComponents<Collider2D>();
+        foreach (var col in colliders) 
+            col.enabled = false;
+        
+        // Desactivar física
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+            rb.simulated = false;
+
+        // --- Destruir la barra de vida ---
         if (barraDeSaludUI_Instancia != null)
         {
             Destroy(barraDeSaludUI_Instancia.gameObject);
         }
-        // --- FIN ---
         
-        // Destruir el sapo después de 2 segundos (para anim de muerte)
-        Destroy(gameObject, 2f); 
+        // Destruir el sapo DESPUÉS de que termine la animación del aura
+        Destroy(gameObject, duracionAnimacion + 0.1f);
+        
+        Debug.Log($"Enemigo se destruirá en {duracionAnimacion + 0.1f} segundos");
     }
-}   
+}

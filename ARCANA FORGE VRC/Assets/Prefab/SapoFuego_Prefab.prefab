@@ -351,7 +351,7 @@ MonoBehaviour:
   attackType: 1
   fireballPrefab: {fileID: 7186562175264049506, guid: c0b9d50b74cf26f49af9f1cf4d154627, type: 3}
   fireballSpawnPoint: {fileID: 0}
-  fireballSfx: {fileID: 0}
+  fireballSfx: {fileID: 8300000, guid: 53fc56374f88ee64580edfd944f3bb6b, type: 3}
   damagePorContacto: 10
   knockbackForceHorizontal: 5
   knockbackForceVertical: 3
@@ -373,6 +373,8 @@ MonoBehaviour:
   saludActual: 50
   saludMaxima: 50
   barraDeSaludPrefab: {fileID: 4931453611130834882, guid: a333cfc9ab4455949a281211cf098356, type: 3}
+  auraMagicaPrefab: {fileID: 7120816580093526232, guid: 9f6a03e8492c83848965acfeab0c332b, type: 3}
+  offsetAuraY: 0
 --- !u!195 &2835859363816928623
 NavMeshAgent:
   m_ObjectHideFlags: 0

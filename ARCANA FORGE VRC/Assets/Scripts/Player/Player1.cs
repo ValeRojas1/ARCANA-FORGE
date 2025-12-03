@@ -1,5 +1,4 @@
 using TMPro;
-//using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -20,8 +19,26 @@ public class Player1 : MonoBehaviour
     public LayerMask whatIsGround;
 
     [Header("Proyectil")]
-    public GameObject projectilePrefab; // asignar el prefab (desde Project)
-    public Transform firePoint;         // empty en la mano
+    public GameObject projectilePrefab;
+    public Transform firePoint;
+
+    [Header("Audio de Proyectil")]
+    public AudioClip sonidoDisparoNormal;      // ← Sonido del proyectil normal
+    public AudioClip sonidoDisparoPotenciado;  // ← Sonido del proyectil potenciado
+
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // ✅ NUEVO: AGACHARSE - COLLIDER DINÁMICO
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    [Header("Agacharse")]
+    [Tooltip("Altura del collider agachado (0.5 = 50% de altura normal)")]
+    public float crouchHeightMultiplier = 0.5f;
+    
+    private bool isCrouching = false;
+    private Vector2 standingColliderSize;
+    private Vector2 standingColliderOffset;
+    private Vector2 crouchingColliderSize;
+    private Vector2 crouchingColliderOffset;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -29,8 +46,8 @@ public class Player1 : MonoBehaviour
     private Collider2D playerCollider;
 
     private bool isGrounded = false;
-    private int coins;
-    public TMP_Text textCoins;
+    //private int coins;
+    //public TMP_Text textCoins;
     public AudioSource audioSource;
     public AudioClip coinClip;
     public AudioClip barrilClip;
@@ -41,28 +58,96 @@ public class Player1 : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerCollider = GetComponent<Collider2D>();
+
+        // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        // ✅ CONFIGURAR TAMAÑOS DEL COLLIDER
+        // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        
+        // Detecta si es CapsuleCollider2D o BoxCollider2D
+        if (playerCollider is CapsuleCollider2D capsule)
+        {
+            standingColliderSize = capsule.size;
+            standingColliderOffset = capsule.offset;
+        }
+        else if (playerCollider is BoxCollider2D box)
+        {
+            standingColliderSize = box.size;
+            standingColliderOffset = box.offset;
+        }
+        else
+        {
+            Debug.LogError("El collider del jugador debe ser CapsuleCollider2D o BoxCollider2D");
+            return;
+        }
+
+        // Calcula el tamaño agachado
+        crouchingColliderSize = new Vector2(
+            standingColliderSize.x,
+            standingColliderSize.y * crouchHeightMultiplier
+        );
+
+        // Ajusta el offset hacia abajo (para que el collider baje desde arriba)
+        float offsetDifference = (standingColliderSize.y - crouchingColliderSize.y) * 0.5f;
+        crouchingColliderOffset = new Vector2(
+            standingColliderOffset.x,
+            standingColliderOffset.y - offsetDifference
+        );
+
+        // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        // ✅ NUEVO: Conectar al GameManager
+        // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        
+        
     }
+
 
     void Update()
     {
-        // Movimiento horizontal
-        float moveInput = Input.GetAxisRaw("Horizontal");
-        rb.linearVelocity = new Vector2(moveInput * speed, rb.linearVelocity.y);
-
-        // isRunning (bool)
-        bool isRunning = Mathf.Abs(moveInput) > 0.01f;
-        animator.SetBool("isRunning", isRunning);
-
-        // Flip
-        if (moveInput < 0) spriteRenderer.flipX = true;
-        else if (moveInput > 0) spriteRenderer.flipX = false;
-
         // Ground check
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
         animator.SetBool("isGrounded", isGrounded);
 
-        // Saltar
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        // ✅ AGACHARSE (CON COLLIDER DINÁMICO)
+        // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        if (Input.GetKey(KeyCode.S) && isGrounded)
+        {
+            if (!isCrouching)
+            {
+                Crouch();
+            }
+        }
+        else
+        {
+            if (isCrouching)
+            {
+                StandUp();
+            }
+        }
+
+        // Si está agachado, NO puede moverse (opcional)
+        if (isCrouching)
+        {
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+            animator.SetBool("isRunning", false);
+        }
+        else
+        {
+            // Movimiento horizontal normal
+            float moveInput = Input.GetAxisRaw("Horizontal");
+            rb.linearVelocity = new Vector2(moveInput * speed, rb.linearVelocity.y);
+
+            // isRunning (bool)
+            bool isRunning = Mathf.Abs(moveInput) > 0.01f;
+            animator.SetBool("isRunning", isRunning);
+
+            // Flip
+            if (moveInput < 0) spriteRenderer.flipX = true;
+            else if (moveInput > 0) spriteRenderer.flipX = false;
+        }
+
+        // Saltar (solo si NO está agachado)
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space) && !isCrouching)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             animator.SetBool("isJumping", true);
@@ -90,36 +175,87 @@ public class Player1 : MonoBehaviour
             animator.SetBool("isFalling", false);
         }
 
-        // --- 🔹 Agacharse (tecla S) ---
-        if (Input.GetKey(KeyCode.S) && isGrounded)
-        {
-            animator.SetBool("isCrouching", true);
-            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); // opcional: inmóvil
-        }
-        else
-        {
-            animator.SetBool("isCrouching", false);
-        }
-
-        // Ataque (dispara la animación)
-        if (Input.GetKeyDown(KeyCode.F))
+        // Ataque (solo si NO está agachado)
+        if (Input.GetKeyDown(KeyCode.F) && !isCrouching)
         {
             Attack();
         }
     }
 
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // ✅ FUNCIONES DE AGACHARSE
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-    // Activa la animación (NO instancia aquí)
-    void Attack()
+    void Crouch()
     {
-        // Si tu Animator usa un bool "isAttacking":
-        animator.SetBool("isAttacking", true);
+        isCrouching = true;
+        animator.SetBool("isCrouching", true);
 
-        // Alternativa si usas Trigger en Animator:
-        // animator.SetTrigger("Attack");
+        // Cambia el tamaño del collider
+        if (playerCollider is CapsuleCollider2D capsule)
+        {
+            capsule.size = crouchingColliderSize;
+            capsule.offset = crouchingColliderOffset;
+        }
+        else if (playerCollider is BoxCollider2D box)
+        {
+            box.size = crouchingColliderSize;
+            box.offset = crouchingColliderOffset;
+        }
+
+        Debug.Log("¡Jugador agachado! Collider reducido.");
     }
 
-    // Este método lo debe llamar el Animation Event en el frame exacto de disparo
+    void StandUp()
+    {
+        // Verifica si hay espacio para levantarse
+        if (!CanStandUp())
+        {
+            Debug.Log("No hay espacio para levantarse");
+            return;
+        }
+
+        isCrouching = false;
+        animator.SetBool("isCrouching", false);
+
+        // Restaura el tamaño del collider
+        if (playerCollider is CapsuleCollider2D capsule)
+        {
+            capsule.size = standingColliderSize;
+            capsule.offset = standingColliderOffset;
+        }
+        else if (playerCollider is BoxCollider2D box)
+        {
+            box.size = standingColliderSize;
+            box.offset = standingColliderOffset;
+        }
+
+        Debug.Log("¡Jugador de pie! Collider restaurado.");
+    }
+
+    bool CanStandUp()
+    {
+        // Raycast hacia arriba para detectar obstáculos
+        Vector2 rayOrigin = (Vector2)transform.position + standingColliderOffset;
+        float rayDistance = standingColliderSize.y * 0.6f;
+
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up, rayDistance, whatIsGround);
+
+        // Debug visual (opcional)
+        Debug.DrawRay(rayOrigin, Vector2.up * rayDistance, hit.collider != null ? Color.red : Color.green, 0.5f);
+
+        return hit.collider == null; // true si NO hay obstáculo
+    }
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // RESTO DEL CÓDIGO (SIN CAMBIOS)
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+    void Attack()
+    {
+        animator.SetBool("isAttacking", true);
+    }
+
     public void FireProjectile()
     {
         if (projectilePrefab == null || firePoint == null)
@@ -128,28 +264,57 @@ public class Player1 : MonoBehaviour
             return;
         }
 
+        // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        // ✅ REPRODUCIR EL SONIDO CORRECTO SEGÚN EL PROYECTIL
+        // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+        AudioClip sonidoActual = null;
+
+        // Detectar si el proyectil actual es el potenciado
+        if (projectilePrefab.name.Contains("Potenciado"))
+        {
+            sonidoActual = sonidoDisparoPotenciado;
+            Debug.Log("🔥 Disparando proyectil POTENCIADO");
+        }
+        else
+        {
+            sonidoActual = sonidoDisparoNormal;
+            Debug.Log("✓ Disparando proyectil normal");
+        }
+
+        // Reproducir el sonido correspondiente
+        if (sonidoActual != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(sonidoActual);
+        }
+        else
+        {
+            if (sonidoActual == null)
+                Debug.LogWarning("⚠ Sonido de disparo NO asignado");
+            if (audioSource == null)
+                Debug.LogWarning("⚠ Audio Source NO asignado");
+        }
+
+
         GameObject proj = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         proj.name = "Projectile_Debug_" + Time.frameCount;
 
-        // Ignorar colisión con el player
         Collider2D projCol = proj.GetComponent<Collider2D>();
         if (projCol != null && playerCollider != null)
             Physics2D.IgnoreCollision(projCol, playerCollider);
 
-        // Direccion según flip
         int dir = spriteRenderer.flipX ? -1 : 1;
         Projectile p = proj.GetComponent<Projectile>();
         if (p != null) p.SetDirection(dir);
         else Debug.LogWarning("El prefab instanciado NO tiene componente Projectile");
     }
 
-    // Llamar por Animation Event al final del clip de ataque
+
     public void EndAttack()
     {
         animator.SetBool("isAttacking", false);
     }
 
-    // (opcional) ayuda visual para el groundCheck
     void OnDrawGizmosSelected()
     {
         if (groundCheck != null)
@@ -165,34 +330,41 @@ public class Player1 : MonoBehaviour
         {
             audioSource.PlayOneShot(coinClip);
             Destroy(collision.gameObject);
-            coins++;
-            textCoins.text = coins.ToString();
+            
+            // ✅ NUEVO: Usar el GameManager para añadir monedas
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.AddCoin();
+            }
         }
+
 
         if (collision.transform.CompareTag("Spikes"))
         {
+            // ✅ NUEVO: Restaurar monedas al checkpoint antes de reiniciar
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.RestoreCoinsToCheckpoint();
+            }
+            
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
+
         if (collision.transform.CompareTag("Barril"))
         {
-            // knockback
             audioSource.PlayOneShot(barrilClip);
             Vector2 knockbackDir = (rb.position - (Vector2)collision.transform.position).normalized;
             rb.linearVelocity = Vector2.zero;
             rb.AddForce(knockbackDir * 3, ForceMode2D.Impulse);
 
-            // Desactivar colisiones del barril
             BoxCollider2D[] colliders = collision.gameObject.GetComponents<BoxCollider2D>();
             foreach (BoxCollider2D col in colliders)
             {
                 col.enabled = false;
             }
 
-            // Activar animación del barril
             collision.GetComponent<Animator>().enabled = true;
-
-            // Destruir después de un corto tiempo
             Destroy(collision.gameObject, 0.5f);
         }
     }

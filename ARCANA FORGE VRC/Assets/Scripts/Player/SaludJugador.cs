@@ -1,51 +1,81 @@
 using UnityEngine;
-using UnityEngine.UI; // Esta probablemente ya la tienes por la barra
-using UnityEngine.SceneManagement; // <-- ¡AÑADE ESTA LÍNEA!// SaludJugador.cs (Asegúrate de que este script esté en tu objeto "Mago")
+// ¡Borra "using UnityEngine.UI;"! Ya no necesitamos hablar con el Slider
+using UnityEngine.SceneManagement;
 
 public class SaludJugador : MonoBehaviour
 {
-    public int saludActual = 100;
+    [Header("Salud")]
     public int saludMaxima = 100;
-    // ¡NUEVA LÍNEA!
-    public UI_BarraDeSalud barraDeSaludUI;
+    public int saludActual;
+    
+    // --- ¡LA CORRECCIÓN ESTÁ AQUÍ! ---
+    // ¡Borramos la referencia al Slider!
+    // Ahora hacemos referencia al SCRIPT del prefab, como antes.
+    [Header("UI - Barra de Salud")]
+    public UI_BarraDeSalud barraDeSaludUI; // ← ¡Arrastra tu prefab "BarraSalud_Jugador" aquí!
 
-    // Renombramos la función a "TakeDamage" para que
-    // el script TongueHitbox.cs pueda encontrarla.
+    void Start()
+    {
+        saludActual = saludMaxima;
+        
+        // ¡ASEGÚRATE DE QUE LA BARRA ESTÉ CONECTADA!
+        if (barraDeSaludUI != null)
+        {
+            // 1. ¡LE DECIMOS A LA BARRA QUE NOS SIGA! (Esta era la parte rota)
+            barraDeSaludUI.targetToFollow = this.transform; 
+            
+            // 2. Inicializa la barra al comenzar
+            barraDeSaludUI.ActualizarBarra(saludActual, saludMaxima);
+        }
+        else
+        {
+            Debug.LogError("¡BARRA DE SALUD NO ASIGNADA AL JUGADOR EN EL INSPECTOR!");
+        }
+    }
 
     public void TakeDamage(int cantidad)
     {
-        // No permitas más daño si ya estás muerto
         if (saludActual <= 0) return;
 
         saludActual -= cantidad;
         Debug.Log("¡Ay! Salud del jugador: " + saludActual);
 
+        // ¡Actualizamos la barra usando su script!
         if (barraDeSaludUI != null)
         {
             barraDeSaludUI.ActualizarBarra(saludActual, saludMaxima);
         }
 
-        // --- LÓGICA DE MUERTE ACTUALIZADA ---
         if (saludActual <= 0)
         {
-            saludActual = 0; // Asegurarse de que no sea negativo
+            saludActual = 0;
             Debug.Log("El jugador ha muerto. Reiniciando nivel...");
-
-            // Desactivamos al jugador para evitar errores
-            // (Esto es opcional, pero es buena práctica)
-            // gameObject.SetActive(false); 
-
-            // ¡Reinicia la escena actual!
             ReiniciarNivel();
         }
     }
-    
+
     public void ReiniciarNivel()
     {
-        // Obtiene el índice de la escena que está cargada ahora mismo
         int indiceEscenaActual = SceneManager.GetActiveScene().buildIndex;
-        
-        // Vuelve a cargar esa misma escena
         SceneManager.LoadScene(indiceEscenaActual);
+    }
+
+    // ¡Tu función de curar ahora funciona perfecto!
+    public void Heal(int cantidad)
+    {
+        saludActual += cantidad;
+
+        if (saludActual > saludMaxima)
+        {
+            saludActual = saludMaxima;
+        }
+
+        Debug.Log("¡Vida restaurada! +" + cantidad + " HP | Salud actual: " + saludActual + "/" + saludMaxima);
+
+        // ¡Actualizamos la barra usando su script!
+        if (barraDeSaludUI != null)
+        {
+            barraDeSaludUI.ActualizarBarra(saludActual, saludMaxima);
+        }
     }
 }

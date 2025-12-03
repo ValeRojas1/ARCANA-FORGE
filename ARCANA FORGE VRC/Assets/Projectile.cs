@@ -49,30 +49,55 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Ignorar al jugador para no destruirnos al crearnos
-        if (other.CompareTag("Player")) return;
-
-        // Aquí podrías agregar lógica de daño a enemigos:
-        // if (other.CompareTag("Enemy")) { /* aplicar daño */ }
-        // Intentamos encontrar un script de salud en lo que chocamos
-        SaludEnemigo saludEnemigo = other.GetComponent<SaludEnemigo>();
-
-        if (saludEnemigo != null)
+        // 1. Ignorar al jugador (esto está perfecto)
+        if (other.CompareTag("Player"))
         {
-            // ¡Le encontramos! Hacerle daño
-            saludEnemigo.TakeDamage(dano);
-            
-            // Destruir el proyectil al impactar
-            Destroy(gameObject);
+            return;
         }
 
-        // Opcional: Destruir si choca con el escenario (ej. Layer "Ground")
+        // 2. ¿Chocamos con el JEFE?
+        // (Asegúrate de que tu JefeFinal_Prefab tenga el Tag "Jefe")
+        if (other.CompareTag("Jefe"))
+        {
+            Jefe_Salud saludJefe = other.GetComponent<Jefe_Salud>();
+            if (saludJefe != null)
+            {
+                // ¡Encontrado! Le hacemos daño
+                saludJefe.TakeDamage(dano);
+                
+                // Destruimos la bala
+                Destroy(gameObject);
+                return; // Salimos de la función
+            }
+        }
+
+        // 3. Si no es el Jefe, ¿es un ENEMIGO (Sapo)?
+        // (Asegúrate de que tus Sapos tengan el Tag "Enemigo")
+        if (other.CompareTag("Enemy"))
+        {
+            SaludEnemigo saludEnemigo = other.GetComponent<SaludEnemigo>();
+            if (saludEnemigo != null)
+            {
+                // ¡Encontrado! Le hacemos daño
+                saludEnemigo.TakeDamage(dano);
+
+                // Destruimos la bala
+                Destroy(gameObject);
+                return; // Salimos de la función
+            }
+        }
+
+        // 4. ¿Chocamos con el SUELO?
         if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             Destroy(gameObject);
+            return;
         }
 
-        Destroy(gameObject);
+        // NOTA: Eliminé el 'Destroy(gameObject);' que tenías al final,
+        // porque destruía la bala si tocaba *cualquier* trigger, 
+        // como el hitbox del lanzallamas del jefe (sin hacer daño).
+        // Ahora la bala SOLO se destruye si golpea algo con salud o el suelo.
     }
 
     
